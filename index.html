@@ -54,7 +54,7 @@
 
         /* MENU DESKTOPOWE */
         .desktop-menu { 
-            flex: 0 1 auto; /* Zapobiega rozpychaniu */
+            flex: 0 1 auto; 
             display: flex; gap: 30px; align-items: center; 
             background: var(--glass-bg); padding: 10px 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05);
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
@@ -107,6 +107,10 @@
         .section-padding { padding: 90px 10%; }
         
         @media (max-width: 768px) { .section-padding { padding: 60px 5%; } .section-header h2 { font-size: 1.8rem; } }
+
+        /* O NAS */
+        .about-content { max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; font-weight: 300; }
+        .about-content strong { color: white; font-weight: 600; }
 
         /* USŁUGI */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
@@ -194,6 +198,18 @@
             <a href="#uslugi" class="btn-outline">ZOBACZ USŁUGI</a>
         </div>
     </header>
+
+    <section id="o-nas" class="section-padding" style="background: #09090b; border-bottom: 1px solid var(--border-light);">
+        <div class="section-header">
+            <h2>O <span>Nas</span></h2>
+            <p>Poznaj studio, dla którego każdy detal ma ogromne znaczenie.</p>
+        </div>
+        <div class="about-content">
+            <p>Jesteśmy profesjonalnym studiem auto detailingu w Krakowie. Motoryzacja to nasza pasja, a przywracanie samochodom nieskazitelnego blasku to coś, w czym jesteśmy najlepsi. Nie uznajemy kompromisów – <strong>pracujemy wyłącznie na najwyższej klasy kosmetykach i sprawdzonym sprzęcie.</strong></p>
+            <br>
+            <p>Niezależnie od tego, czy przyjeżdżasz prosto z salonu po zabezpieczenie nowego lakieru, czy chcesz przywrócić dawną świetność swojemu klasykowi – doradzimy, precyzyjnie wycenimy i zadbamy o Twoje auto tak, jakby było nasze własne. Zadowolenie naszych klientów jest dla nas priorytetem.</p>
+        </div>
+    </section>
 
     <section id="uslugi" class="section-padding">
         <div class="section-header">
