@@ -46,12 +46,12 @@
         :root { 
             --bg-main: #08080a;      
             --bg-card: #111114;      
-            --accent: #d4af37;       /* Luksusowe złoto */
-            --accent-glow: rgba(212, 175, 55, 0.3);
+            --accent: #C9A045;       /* Bogate, luksusowe metaliczne złoto */
+            --accent-glow: rgba(201, 160, 69, 0.3);
             --text-light: #f4f4f5;   
             --text-muted: #a0a0ab;   
             --glass-bg: rgba(17, 17, 20, 0.75);
-            --glass-border: rgba(212, 175, 55, 0.15);
+            --glass-border: rgba(201, 160, 69, 0.15);
             --border-light: rgba(255, 255, 255, 0.04);
         }
         
@@ -73,7 +73,7 @@
         
         .logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(1rem, 3.5vw, 1.2rem); text-decoration: none; color: var(--text-light); z-index: 2100; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
         .logo span { color: var(--accent); }
-        .logo-icon { width: 35px; height: 35px; background: rgba(212, 175, 55, 0.1); border-radius: 5px; display: flex; justify-content: center; align-items: center; border: 1px solid var(--accent); font-size: 1rem;}
+        .logo-icon { width: 35px; height: 35px; background: rgba(201, 160, 69, 0.1); border-radius: 5px; display: flex; justify-content: center; align-items: center; border: 1px solid var(--accent); font-size: 1rem;}
 
         .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2100; padding: 5px; flex-shrink: 0; position: relative;}
         .hamburger span { width: 25px; height: 2px; background-color: var(--text-light); transition: all 0.3s ease-in-out; }
@@ -92,10 +92,10 @@
         .desktop-actions { display: flex; gap: 15px; align-items: center; flex-shrink: 0; }
 
         .btn { background: var(--accent); color: #000; padding: 14px 30px; text-decoration: none; font-weight: 800; border-radius: 5px; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px var(--accent-glow);}
-        .btn:hover { background: #e6c245; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+        .btn:hover { background: #e6c245; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(201, 160, 69, 0.5); }
 
         .btn-outline { background: transparent; color: var(--text-light); padding: 12px 25px; border-radius: 5px; border: 1px solid var(--glass-border); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; transition: all 0.3s; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 0.5px;}
-        .btn-outline:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--accent); color: var(--accent); }
+        .btn-outline:hover { background: rgba(201, 160, 69, 0.1); border-color: var(--accent); color: var(--accent); }
 
         /* --- ODDZIELNE MENU MOBILNE --- */
         .mobile-overlay {
@@ -117,6 +117,12 @@
             .desktop-menu, .desktop-actions { display: none; }
             nav.menu-open { background: transparent !important; border: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
             nav.menu-open .hamburger span { opacity: 0; }
+        }
+
+        @media (max-width: 400px) {
+            nav { padding: 15px 3%; }
+            .logo { font-size: 0.95rem; }
+            .logo-icon { width: 30px; height: 30px; font-size: 0.8rem; }
         }
 
         /* --- HERO SECTION --- */
@@ -157,10 +163,10 @@
             content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
             background: var(--accent); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;
         }
-        .card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
+        .card:hover { transform: translateY(-5px); border-color: rgba(201, 160, 69, 0.3); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
         .card:hover::before { transform: scaleX(1); }
 
-        .card-icon { width: 60px; height: 60px; background: rgba(212, 175, 55, 0.05); color: var(--accent); border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; margin: 0 auto 25px auto; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .card-icon { width: 60px; height: 60px; background: rgba(201, 160, 69, 0.05); color: var(--accent); border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; margin: 0 auto 25px auto; border: 1px solid rgba(201, 160, 69, 0.2); }
         .card h3 { font-family: 'Montserrat'; margin-bottom: 15px; font-size: 1.3rem; color: white; font-weight: 700;}
         .card p { font-size: 0.95rem; color: var(--text-muted); font-weight: 300; line-height: 1.7;}
 
@@ -177,7 +183,7 @@
 
         /* --- MODAL --- */
         .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 3000; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);}
-        .modal-content { background: var(--bg-card); padding: 45px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; text-align: center; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 0 60px rgba(212, 175, 55, 0.15); max-height: 90vh; overflow-y: auto; }
+        .modal-content { background: var(--bg-card); padding: 45px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; text-align: center; border: 1px solid rgba(201, 160, 69, 0.3); box-shadow: 0 0 60px rgba(201, 160, 69, 0.15); max-height: 90vh; overflow-y: auto; }
         .close { position: absolute; top: 15px; right: 25px; font-size: 32px; cursor: pointer; color: var(--text-muted); transition: 0.3s; }
         .close:hover { color: var(--accent); }
 
