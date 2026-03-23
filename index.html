@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3085/3085330.png" type="image/png">
+    
+    <title>Better2Gether CARSPA | Auto Detailing Kraków | Powłoki Ceramiczne</title>
+    <meta name="description" content="Profesjonalny Auto Detailing w Krakowie. Powłoki ceramiczne, korekta lakieru, mycie detailingowe. Sprawimy, że Twoje auto będzie wyglądać lepiej niż z salonu.">
+    <meta name="keywords" content="auto detailing Kraków, car spa Kraków, powłoki ceramiczne, korekta lakieru, pranie tapicerki, Zawiła Kraków">
+    <meta name="author" content="Better2Gether CARSPA">
+    
+    <meta property="og:title" content="Better2Gether CARSPA | Premium Detailing Kraków">
+    <meta property="og:description" content="Twój samochód w rękach pasjonatów. Umów się na darmowe oględziny lakieru!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://twojadomena.pl"> 
+    <meta property="og:image" content="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1200&auto=format&fit=crop">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoBodyShop",
+      "name": "Better2Gether_CARSPA",
+      "image": "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1200&auto=format&fit=crop",
+      "telephone": "+48 000 000 000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Zawiła 39",
+        "addressLocality": "Kraków",
+        "postalCode": "30-442",
+        "addressCountry": "PL"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "40"
+      }
+    }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --bg-main: #08080a;      
+            --bg-card: #111114;      
+            --accent: #d4af37;       /* Luksusowe złoto */
+            --accent-glow: rgba(212, 175, 55, 0.3);
+            --text-light: #f4f4f5;   
+            --text-muted: #a0a0ab;   
+            --glass-bg: rgba(17, 17, 20, 0.75);
+            --glass-border: rgba(212, 175, 55, 0.15);
+            --border-light: rgba(255, 255, 255, 0.04);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-light); line-height: 1.6; overflow-x: hidden; }
+
+        /* --- NAVBAR --- */
+        nav { 
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; 
+            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+            transition: all 0.4s ease;
+        }
+        nav.scrolled {
+            background: var(--glass-bg); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border); padding: 10px 5%;
+        }
+        
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: clamp(1rem, 3.5vw, 1.2rem); text-decoration: none; color: var(--text-light); z-index: 2100; display: flex; align-items: center; gap: 10px; text-transform: uppercase; letter-spacing: 1px; }
+        .logo span { color: var(--accent); }
+        .logo-icon { width: 35px; height: 35px; background: rgba(212, 175, 55, 0.1); border-radius: 5px; display: flex; justify-content: center; align-items: center; border: 1px solid var(--accent); font-size: 1rem;}
+
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 2100; padding: 5px; flex-shrink: 0; position: relative;}
+        .hamburger span { width: 25px; height: 2px; background-color: var(--text-light); transition: all 0.3s ease-in-out; }
+
+        /* --- MENU DESKTOPOWE --- */
+        .desktop-menu { 
+            display: flex; gap: 30px; align-items: center; 
+            background: var(--glass-bg); padding: 10px 30px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        }
+        .desktop-menu a { text-decoration: none; color: var(--text-light); font-weight: 600; font-size: 0.85rem; position: relative; padding-bottom: 5px; transition: color 0.3s; text-transform: uppercase; letter-spacing: 0.5px;}
+        .desktop-menu a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0; background-color: var(--accent); transition: width 0.3s ease; }
+        .desktop-menu a:hover { color: var(--accent); }
+        .desktop-menu a:hover::after { width: 100%; }
+
+        .desktop-actions { display: flex; gap: 15px; align-items: center; flex-shrink: 0; }
+
+        .btn { background: var(--accent); color: #000; padding: 14px 30px; text-decoration: none; font-weight: 800; border-radius: 5px; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px var(--accent-glow);}
+        .btn:hover { background: #e6c245; transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
+
+        .btn-outline { background: transparent; color: var(--text-light); padding: 12px 25px; border-radius: 5px; border: 1px solid var(--glass-border); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; transition: all 0.3s; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 0.5px;}
+        .btn-outline:hover { background: rgba(212, 175, 55, 0.1); border-color: var(--accent); color: var(--accent); }
+
+        /* --- ODDZIELNE MENU MOBILNE --- */
+        .mobile-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background-color: var(--bg-main);
+            z-index: 2050;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .mobile-overlay.active { opacity: 1; pointer-events: auto; }
+        .close-menu { position: absolute; top: 20px; right: 25px; font-size: 40px; color: var(--text-light); cursor: pointer; display: none; z-index: 2060; }
+        .mobile-overlay.active .close-menu { display: block; }
+        .mobile-overlay a.nav-item { text-decoration: none; color: var(--text-light); font-size: 1.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+        .mobile-overlay .mobile-actions { display: flex; flex-direction: column; gap: 15px; width: 80%; max-width: 300px; margin-top: 30px; }
+        .mobile-overlay .btn, .mobile-overlay .btn-outline { width: 100%; height: 55px; }
+
+        @media (max-width: 1200px) { 
+            .hamburger { display: flex; }
+            .desktop-menu, .desktop-actions { display: none; }
+            nav.menu-open { background: transparent !important; border: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+            nav.menu-open .hamburger span { opacity: 0; }
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 85vh;
+            background: linear-gradient(rgba(8, 8, 10, 0.7), rgba(8, 8, 10, 0.95)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center; 
+            padding: 100px 10% 40px; 
+            position: relative; 
+        }
+
+        .hero h1 { font-family: 'Montserrat'; font-weight: 900; font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 20px; text-shadow: 0 5px 15px rgba(0,0,0,0.8); text-transform: uppercase; letter-spacing: -1px; line-height: 1.1;}
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.15rem; margin-bottom: 35px; max-width: 700px; color: var(--text-light); font-weight: 300; opacity: 0.9;}
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;}
+
+        /* --- SEKCJE OGÓLNE --- */
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-header h2 { font-family: 'Montserrat'; font-size: 2.2rem; margin-bottom: 15px; color: var(--text-light); text-transform: uppercase; font-weight: 900; letter-spacing: -0.5px;}
+        .section-header h2 span { color: var(--accent); }
+        .section-header p { font-size: 1.1rem; color: var(--text-muted); font-weight: 300; max-width: 700px; margin: 0 auto;}
+        .section-padding { padding: 90px 10%; }
+        
+        @media (max-width: 768px) {
+            .section-padding { padding: 60px 5%; }
+            .section-header h2 { font-size: 1.8rem; }
+        }
+
+        /* --- USŁUGI --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--bg-card); padding: 45px 35px; border-radius: 10px; text-align: center; border: 1px solid var(--border-light); 
+            transition: all 0.4s; position: relative; overflow: hidden;
+        }
+        .card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--accent); transform: scaleX(0); transition: transform 0.4s ease; transform-origin: left;
+        }
+        .card:hover { transform: translateY(-5px); border-color: rgba(212, 175, 55, 0.3); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); }
+        .card:hover::before { transform: scaleX(1); }
+
+        .card-icon { width: 60px; height: 60px; background: rgba(212, 175, 55, 0.05); color: var(--accent); border-radius: 5px; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; margin: 0 auto 25px auto; border: 1px solid rgba(212, 175, 55, 0.2); }
+        .card h3 { font-family: 'Montserrat'; margin-bottom: 15px; font-size: 1.3rem; color: white; font-weight: 700;}
+        .card p { font-size: 0.95rem; color: var(--text-muted); font-weight: 300; line-height: 1.7;}
+
+        /* --- OPINIE (SOCIAL PROOF) --- */
+        .reviews-section { background: #0c0c0e; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); }
+        .review-card {
+            background: var(--bg-main); padding: 35px; border-radius: 10px; border: 1px solid var(--border-light);
+            text-align: left;
+        }
+        .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 15px; letter-spacing: 2px;}
+        .review-text { font-style: italic; color: var(--text-light); font-weight: 300; margin-bottom: 20px; font-size: 0.95rem;}
+        .review-author { font-family: 'Montserrat'; font-weight: 700; font-size: 1rem; color: white;}
+        .review-source { font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;}
+
+        /* --- MODAL --- */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 3000; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);}
+        .modal-content { background: var(--bg-card); padding: 45px; border-radius: 10px; width: 90%; max-width: 500px; position: relative; text-align: center; border: 1px solid rgba(212, 175, 55, 0.3); box-shadow: 0 0 60px rgba(212, 175, 55, 0.15); max-height: 90vh; overflow-y: auto; }
+        .close { position: absolute; top: 15px; right: 25px; font-size: 32px; cursor: pointer; color: var(--text-muted); transition: 0.3s; }
+        .close:hover { color: var(--accent); }
+
+        form { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; text-align: left; }
+        input, select, textarea { padding: 14px; border: 1px solid var(--border-light); border-radius: 5px; width: 100%; font-family: 'Inter', sans-serif; font-size: 0.95rem; outline: none; transition: 0.3s; background: rgba(255,255,255,0.03); color: white;}
+        input:focus, select:focus, textarea:focus { border-color: var(--accent); background: rgba(255,255,255,0.05); }
+        textarea { resize: vertical; min-height: 120px; }
+        select option { background-color: #ffffff; color: #000000; }
+
+        /* FOOTER */
+        footer { padding: 70px 10% 40px; background: #050506; color: var(--text-muted); text-align: center; }
+        footer h3 { margin-bottom: 20px; font-family: 'Montserrat'; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: 1px; font-size: 1.5rem;}
+        footer h3 span { color: var(--accent); }
+        .data-kontaktowe { margin-top: 30px; font-size: 1rem; line-height: 2;}
+        .data-kontaktowe p strong { color: white; font-weight: 600; }
+        
+        .map-container { 
+            width: 100%; max-width: 900px; height: 350px; margin: 40px auto; 
+            border-radius: 5px; overflow: hidden; border: 1px solid var(--border-light);
+            filter: grayscale(100%) invert(90%) contrast(80%); /* Dopasowanie mapy do ciemnego motywu */
+            transition: filter 0.3s;
+        }
+        .map-container:hover { filter: none; }
+    </style>
+</head>
+
+<body>
+
+    <div class="mobile-overlay" id="mobileMenu">
+        <span class="close-menu" onclick="toggleMobileMenu()">×</span>
+        <a href="#o-nas" class="nav-item">O nas</a>
+        <a href="#uslugi" class="nav-item">Usługi</a>
+        <a href="#opinie" class="nav-item">Opinie</a>
+        <a href="#kontakt" class="nav-item">Kontakt</a>
+        <div class="mobile-actions">
+            <button class="btn" onclick="toggleModal()">Darmowe Oględziny</button>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">💎</div>
+            Better2Gether <span>CARSPA</span>
+        </a>
+        
+        <div class="hamburger" onclick="toggleMobileMenu()">
+            <span></span><span></span><span></span>
+        </div>
+
+        <div class="desktop-menu">
+            <a href="#o-nas">O nas</a>
+            <a href="#uslugi">Usługi</a>
+            <a href="#opinie">Opinie</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <div class="desktop-actions">
+            <button class="btn" onclick="toggleModal()">ZAPISZ AUTO</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Twój samochód.<br><span>Lepszy niż nowy.</span></h1>
+        <p>Jesteśmy pasjonatami detailingu. Jeśli chcesz, by Twoje auto wyglądało zjawiskowo, odwiedź nas na Zawiłej – doradzimy, wycenimy i zabezpieczymy Twój lakier.</p>
+        <div class="hero-buttons">
+            <button class="btn" onclick="toggleModal()">UMÓW DARMOWE OGLĘDZINY LAKIERU</button>
+            <a href="#uslugi" class="btn-outline">ZOBACZ USŁUGI</a>
+        </div>
+    </header>
+
+    <section id="uslugi" class="section-padding">
+        <div class="section-header">
+            <h2>Nasze <span>Usługi</span></h2>
+            <p>Bez względu na to, o jakie auto chodzi – wiemy co doradzić, aby przywrócić mu blask z dnia wyjazdu z salonu.</p>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-icon">✨</div>
+                <h3>Korekta Lakieru</h3>
+                <p>Usuwamy zarysowania, zmatowienia i odpryski. Wykonujemy profesjonalne polerowanie maszynowe, które przywraca głębię koloru.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Powłoki Ceramiczne</h3>
+                <p>Zabezpieczamy lakier certyfikowanymi powłokami ceramicznymi oraz twardym woskiem, zapewniając niesamowity połysk i ochronę na lata.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🧼</div>
+                <h3>Wnętrze & Mycie SPA</h3>
+                <p>Kompleksowe mycie detailingowe, mycie parowe oraz dogłębne pranie chemiczne tapicerki. Czystość w każdym detalu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="opinie" class="section-padding reviews-section">
+        <div class="section-header">
+            <h2>Ocena <span>5.0</span> w Google</h2>
+            <p>Nie musisz nam wierzyć na słowo. Zobacz, co mówią klienci, którzy powierzyli nam swoje samochody.</p>
+        </div>
+        <div class="services-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Jestem bardzo zadowolony z usług tej firmy! Samochód po korekcie i zabezpieczeniu lakieru ceramiką wygląda lepiej niż nowy – lakier ma piękny połysk..."</p>
+                <div class="review-author">Rafał Kołodziej</div>
+                <div class="review-source">Opinia z Google</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Bardzo polecam! Usługa wykonana fantastycznie. Samochód wyglądał jak nowy z salonu. Wspaniałe podejście do klienta i komunikacja Pana Piotra."</p>
+                <div class="review-author">Mateusz Kloc</div>
+                <div class="review-source">Opinia z Google</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Pełen profesjonalizm! Bez względu na to, o jakie auto chodzi, Panowie wiedzą co doradzić, aby poprawić jego stan."</p>
+                <div class="review-author">Marlena Smardz</div>
+                <div class="review-source">Opinia z Google</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <button class="btn-outline" onclick="toggleModal()">DOŁĄCZ DO ZADOWOLONYCH KLIENTÓW</button>
+        </div>
+    </section>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleModal()">×</span>
+            <h2 style="font-family: Montserrat; color: white;">Skontaktuj się z nami</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 15px;">Zostaw kontakt, a Pan Piotr odezwie się, by wstępnie omówić auto i zaproponować termin darmowych oględzin.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST">
+                
+                <input type="hidden" name="access_key" value="TUTAJ_TWÓJ_KLUCZ_WEB3FORMS">
+                <input type="hidden" name="redirect" value="https://twojadomena.pl/sukces.html">
+
+                <input type="text" name="name" placeholder="Twoje Imię i Nazwisko" required>
+                <input type="tel" name="phone" placeholder="Twój Numer Telefonu" required>
+                
+                <select name="service_type" required>
+                    <option value="" disabled selected>Co planujemy zrobić z autem?</option>
+                    <option value="Ceramika">Korekta lakieru + Ceramika / Wosk</option>
+                    <option value="Wnetrze">Pranie wnętrza / Detailing środka</option>
+                    <option value="Kompleksowo">Kompleksowe SPA (Zewnątrz + Wnętrze)</option>
+                    <option value="Inne">Mam inne pytanie / Doradztwo</option>
+                </select>
+
+                <textarea name="description" placeholder="Napisz markę, model auta i z czym przyjeżdżasz..." required></textarea>
+                
+                <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.75rem; color: var(--text-muted); cursor: pointer; margin-top: 5px;">
+                    <input type="checkbox" required style="width: 15px; height: 15px; margin-top: 2px; border: var(--border-light); background: transparent; accent-color: var(--accent);">
+                    <span>Zgoda na przetwarzanie danych w celu obsługi zapytania.</span>
+                </label>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">WYŚLIJ ZAPYTANIE</button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="kontakt">
+        <h3>Better2Gether <span>CARSPA</span></h3>
+        <p>Pasja. Detale. Perfekcja.</p>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2564.088365116799!2d19.9142!3d50.0101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDAwJzM2LjQiTiAxOcKwNTQnNTEuMSJF!5e0!3m2!1spl!2spl!4v1611223344556!5m2!1spl!2spl" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="data-kontaktowe">
+            <p><strong>Lokalizacja:</strong> ul. Zawiła 39, 30-442 Kraków</p>
+            <p><strong>Umawianie wizyt:</strong> Zostaw zgłoszenie przez stronę</p>
+            <p style="opacity: 0.6; margin-top: 15px; font-size: 0.85rem;">Pracujemy na najwyższej jakości chemii i sprzęcie detailingowym.</p>
+        </div>
+        <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.4;">© 2024 Better2Gether CARSPA Kraków. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleMobileMenu() {
+            const nav = document.getElementById('navbar');
+            const overlay = document.getElementById('mobileMenu');
+            nav.classList.toggle('menu-open');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = nav.classList.contains('menu-open') ? 'hidden' : 'auto';
+        }
+
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navbar').classList.remove('menu-open');
+                document.getElementById('mobileMenu').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        function toggleModal() {
+            const modal = document.getElementById('bookingModal');
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            } else {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                document.getElementById('navbar').classList.remove('menu-open');
+                document.getElementById('mobileMenu').classList.remove('active');
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) toggleModal();
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                const modal = document.getElementById('bookingModal');
+                if (modal.style.display === 'flex') toggleModal();
+            }
+        });
+    </script>
+</body>
+</html>
