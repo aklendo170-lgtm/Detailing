@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3085/3085330.png" type="image/png">
+    
+    <title>Zgłoszenie Wysłane | Better2Gether CARSPA</title>
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { 
+            --bg-main: #08080a;      
+            --accent: #B38728;       
+            --accent-glow: rgba(179, 135, 40, 0.35);
+            --text-light: #f4f4f5;   
+            --text-muted: #a0a0ab;   
+            --gold-gradient: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-light); line-height: 1.6; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(8, 8, 10, 0.85), rgba(8, 8, 10, 0.95)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            color: white; text-align: center; padding: 0 10%;
+        }
+
+        .icon-success {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        h1 { 
+            font-family: 'Montserrat'; font-weight: 900; font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 15px; text-transform: uppercase; letter-spacing: -1px;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        p { font-size: 1.15rem; margin-bottom: 40px; max-width: 600px; color: var(--text-muted); font-weight: 300; }
+        
+        .btn { background: linear-gradient(45deg, #BF953F, #AA771C); color: #000; padding: 14px 35px; text-decoration: none; font-weight: 800; border-radius: 5px; transition: all 0.3s; cursor: pointer; border: none; display: inline-flex; align-items: center; justify-content: center; font-family: 'Montserrat'; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px var(--accent-glow);}
+        .btn:hover { background: linear-gradient(45deg, #D9B34A, #C2912D); transform: translateY(-2px); box-shadow: 0 6px 25px rgba(179, 135, 40, 0.5); }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div class="icon-success">✔️</div>
+        <h1>Zgłoszenie wysłane!</h1>
+        <p>Dziękujemy za kontakt. Pan Piotr z Better2Gether CARSPA zapozna się ze szczegółami i odezwie się do Ciebie w najbliższym czasie.</p>
+        <a href="index.html" class="btn">Wróć na stronę główną</a>
+    </div>
+</body>
+</html>
