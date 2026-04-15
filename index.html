@@ -175,7 +175,7 @@
         <a href="#opinie" class="nav-item">Opinie</a>
         <a href="#kontakt" class="nav-item">Kontakt</a>
         <div class="mobile-actions">
-            <button class="btn" onclick="toggleModal()">Darmowe Oględziny</button>
+            <button class="btn" onclick="toggleModal()">Bezpłatna Wycena</button>
         </div>
     </div>
 
@@ -209,7 +209,7 @@
         <h1>Twój samochód.<br><span>Lepszy niż nowy.</span></h1>
         <p>Jesteśmy pasjonatami detailingu. Jeśli chcesz, by Twoje auto wyglądało zjawiskowo, odwiedź nas na Zawiłej – doradzimy, wycenimy i zabezpieczymy Twój lakier.</p>
         <div class="hero-buttons">
-            <button class="btn" onclick="toggleModal()">UMÓW DARMOWE OGLĘDZINY LAKIERU</button>
+            <button class="btn" onclick="toggleModal()">UMÓW BEZPŁATNĄ WYCENĘ</button>
             <a href="#uslugi" class="btn-outline">ZOBACZ USŁUGI</a>
         </div>
     </header>
@@ -344,14 +344,13 @@
         <div class="modal-content">
             <span class="close" onclick="toggleModal()">×</span>
             <h2 style="font-family: Montserrat; color: white;">Skontaktuj się z nami</h2>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Zostaw kontakt, a Pan Piotr odezwie się, by wstępnie omówić auto i zaproponować termin darmowych oględzin.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px;">Zostaw kontakt, a nasz zespół odezwie się, by wstępnie omówić auto i zaproponować termin wyceny.</p>
             <!-- TELEFON: wstaw numer przed oddaniem -->
             <p style="color: var(--text-muted); font-size: 0.85rem;">Wolisz zadzwonić? <a href="tel:+48XXXXXXXXX" style="color: var(--accent); text-decoration: none; font-weight: 600;">+48 XXX XXX XXX</a></p>
             
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form id="contactForm">
                 
                 <input type="hidden" name="access_key" value="1c1d9277-86be-42ca-87e9-9688b9cfd839">
-                <input type="hidden" name="redirect" value="https://twojadomena.pl/danke.html">
 
                 <input type="text" name="name" placeholder="Twoje Imię i Nazwisko" required>
                 <input type="tel" name="phone" placeholder="Twój Numer Telefonu" required>
@@ -371,7 +370,7 @@
                     <span>Zgoda na przetwarzanie danych w celu obsługi zapytania.</span>
                 </label>
 
-                <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">WYŚLIJ ZAPYTANIE</button>
+                <button type="submit" id="submitBtn" class="btn" style="width: 100%; margin-top: 10px;">WYŚLIJ ZAPYTANIE</button>
             </form>
         </div>
     </div>
@@ -414,6 +413,38 @@
                 text.textContent = 'UKRYJ ZDJĘCIA';
             }
         }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.textContent = 'WYSYŁANIE...';
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                console.log('Web3Forms response:', result);
+                if (result.success) {
+                    window.location.href = 'https://aklendo170-lgtm.github.io/Detailing/danke.html';
+                } else {
+                    btn.textContent = 'WYŚLIJ ZAPYTANIE';
+                    btn.disabled = false;
+                    alert('Coś poszło nie tak. Spróbuj ponownie.');
+                }
+            } catch (err) {
+                btn.textContent = 'WYŚLIJ ZAPYTANIE';
+                btn.disabled = false;
+                alert('Błąd połączenia. Spróbuj ponownie.');
+            }
+        });
 
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
